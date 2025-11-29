@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fsm>
+  <states>
+    <state>
+      <values>SEL=0</values>
+      <position x="-300.0" y="-180.0"/>
+      <number>0</number>
+      <name>OFF</name>
+      <radius>70</radius>
+      <isInitial>true</isInitial>
+      <initialAngle>12</initialAngle>
+      <defaultDC>false</defaultDC>
+    </state>
+    <state>
+      <values>SEL=1</values>
+      <position x="0.0" y="-180.0"/>
+      <number>1</number>
+      <name>ON</name>
+      <radius>70</radius>
+      <isInitial>false</isInitial>
+      <initialAngle>12</initialAngle>
+      <defaultDC>false</defaultDC>
+    </state>
+  </states>
+  <transitions>
+    <transition>
+      <values></values>
+      <position x="-150.0" y="-219.12737"/>
+      <fromState reference="../../../states/state"/>
+      <toState reference="../../../states/state[2]"/>
+      <condition>IN=1</condition>
+    </transition>
+    <transition>
+      <values></values>
+      <position x="-150.0" y="-154.19508"/>
+      <fromState reference="../../../states/state[2]"/>
+      <toState reference="../../../states/state"/>
+      <condition>IN=0</condition>
+    </transition>
+  </transitions>
+</fsm>

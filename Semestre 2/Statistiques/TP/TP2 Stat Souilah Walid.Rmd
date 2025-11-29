@@ -1,0 +1,129 @@
+---
+title: "TP2 Stat Souilah Walid"
+author: "Souilah Walid"
+date: "2024-04-24"
+output: word_document
+---
+
+```{r}                                                                                        
+#Activite 2
+1-pnorm(1.96)
+pnorm(0.5)
+z <- qnorm(0.95)
+z <- qnorm(0.975)
+z_alpha_90 <- qnorm(1 - (1 - 0.90) / 2)
+z_alpha_95 <- qnorm(1 - (1 - 0.95) / 2)
+z_alpha_99 <- qnorm(1 - (1 - 0.99) / 2)
+```
+
+```{r}
+#Activite 3
+# Définir les paramètres de la loi normale
+mean <- 3
+variance <- 4
+stddev <- sqrt(variance)
+
+# Calculer p(X > 1.96)
+p_gt_1_96 <- 1 - pnorm(1.96, mean = mean, sd = stddev)
+
+# Calculer p(X < 0.5)
+p_lt_0_5 <- pnorm(0.5, mean = mean, sd = stddev)
+
+
+# Calculer p(X > 1.96) pour uniforme [0;1]
+p_gt_1_96_uniform <- ifelse(1.96 > 1, 0, 1 - 1.96)
+
+# Calculer p(X < 0.5) pour uniforme [0;1]
+p_lt_0_5_uniform <- qunif(0.90, min = 0, max = 1)
+
+# Calculer p(X > 1.96) pour uniforme [-10;10]
+p_gt_1_96_uniform_large <- ifelse(1.96 > 10, 0, (10 - 1.96) / 20)
+
+# Calculer p(X < 0.5) pour uniforme [-10;10]
+p_lt_0_5_uniform_large <- ifelse(0.5 < -10, 0, (0.5 + 10) / 20)
+
+```
+#QUestion 1
+#L'utilisation des commandes de calcul statistique par rapport aux tables de lois offre une plus grande flexibilité, précision, rapidité, et réduit les erreurs humaines, tout en permettant l'automatisation et l'intégration avec d'autres outils pour des analyses plus complexes.
+
+```{r}
+#Activite 4
+x = (-300:300)/100 # ou x=seq(-3,3,1/100)
+plot(x,dnorm(x))
+abline(v=0)
+title("Densité de la loi normale.")
+
+x = (0:600)/100 # ou x=seq(-3,3,1/100)
+plot(x,dchisq(x,2))
+abline(v=0)
+title("Densité de la loi de khi-2 à 2 d.d.l.")
+
+x = (0:600)/100 # ou x=seq(-3,3,1/100)
+plot(x,dchisq(x,10))
+abline(v=0)
+title("Densité de la loi de khi-2 à 10 d.d.l.")
+
+x = (0:600)/100 # ou x=seq(-3,3,1/100)
+plot(x,dchisq(x,25))
+abline(v=0)
+title("Densité de la loi de khi-2 à 25 d.d.l.")
+
+x = (-300:300)/100 # ou x=seq(-3,3,1/100)
+plot(x,dt(x,2))
+abline(v=0)
+title("Densité de la loi de Student à 2 d.d.l.")
+
+x = (-300:300)/100 # ou x=seq(-3,3,1/100)
+plot(x,dt(x,10))
+abline(v=0)
+title("Densité de la loi de Student à 10 d.d.l.")
+
+x = (-300:300)/100 # ou x=seq(-3,3,1/100)
+plot(x,dt(x,25))
+abline(v=0)
+title("Densité de la loi de Student à 25 d.d.l.")
+
+x = (0:600)/100 # ou x=seq(-3,3,1/100)
+plot(x,df(x,1,2))
+abline(v=0)
+title("Densité de la loi de Fisher à (1;2) d.d.l.")
+
+x = (0:600)/100 # ou x=seq(-3,3,1/100)
+plot(x,df(x,2,2))
+abline(v=0)
+title("Densité de la loi de Fisher à (2;2) d.d.l.")
+
+x = (0:600)/100 # ou x=seq(-3,3,1/100)
+plot(x,df(x,2,10))
+abline(v=0)
+title("Densité de la loi de Fisher à (2;10) d.d.l.")
+
+x = (0:600)/100 # ou x=seq(-3,3,1/100)
+plot(x,df(x,10,2))
+abline(v=0)
+title("Densité de la loi de Fisher à (10;2) d.d.l.")
+
+x = (0:600)/100 # ou x=seq(-3,3,1/100)
+plot(x,df(x,15,15))
+abline(v=0)
+title("Densité de la loi de Fisher à (15;15) d.d.l.")
+
+
+```
+#QUestion 2
+#Non, cela sont beaucoup de points suivi qui donne la forme d'une ligne continue. La fonction `abline()` dans R ajoute des lignes à un graphique, qu'il s'agisse de lignes horizontales, verticales, de lignes avec des pentes spécifiques ou de lignes de régression; elle permet ainsi de souligner des valeurs, de créer des références ou de montrer des tendances.
+
+```{r}
+#Activite 5
+plot(x,dt(x,4),type='l')
+abline(v=0)
+title("Densité de la loi de Student à 2, 4, 10 et 25 d.d.l.")
+lines(x,dt(x,2),col="red")
+lines(x,dt(x,10),col="blue")
+lines(x,dt(x,25),col="green")
+lines(x,dnorm(x),col="violet")
+
+legend(4,0.35,paste(c(4,2,10,25,"norm"),"degrés de liberté"),text.col=c("black","red","blue","green","violet"),col=c("black","red","blue","green","violet"),lty=1)
+
+```
+

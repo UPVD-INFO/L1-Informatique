@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fsm>
+  <states>
+    <state>
+      <values></values>
+      <position x="60.0" y="60.0"/>
+      <number>0</number>
+      <name>ETAT 0</name>
+      <radius>70</radius>
+      <isInitial>true</isInitial>
+      <initialAngle>12</initialAngle>
+      <defaultDC>false</defaultDC>
+    </state>
+    <state>
+      <values></values>
+      <position x="840.0" y="-60.0"/>
+      <number>1</number>
+      <name>COMPLEMENT à 1</name>
+      <radius>70</radius>
+      <isInitial>false</isInitial>
+      <initialAngle>12</initialAngle>
+      <defaultDC>false</defaultDC>
+    </state>
+    <state>
+      <values></values>
+      <position x="720.0" y="540.0"/>
+      <number>2</number>
+      <name>SELECTION DU COMPLEMENT A DEUX COMPLET</name>
+      <radius>70</radius>
+      <isInitial>false</isInitial>
+      <initialAngle>12</initialAngle>
+      <defaultDC>false</defaultDC>
+    </state>
+  </states>
+  <transitions>
+    <transition>
+      <values></values>
+      <position x="474.1486" y="156.96582"/>
+      <fromState reference="../../../states/state"/>
+      <toState reference="../../../states/state[2]"/>
+      <condition>passage à un complement à 1(inversion des signes)</condition>
+    </transition>
+    <transition>
+      <values></values>
+      <position x="913.6532" y="266.73062"/>
+      <fromState reference="../../../states/state[2]"/>
+      <toState reference="../../../states/state[3]"/>
+      <condition>passage au complément à 2(+1)</condition>
+    </transition>
+    <transition>
+      <values></values>
+      <position x="449.90402" y="-0.6238591"/>
+      <fromState reference="../../../states/state[2]"/>
+      <toState reference="../../../states/state"/>
+      <condition>aucune opération sélectionnée</condition>
+    </transition>
+    <transition>
+      <values></values>
+      <position x="389.7565" y="300.3348"/>
+      <fromState reference="../../../states/state[3]"/>
+      <toState reference="../../../states/state"/>
+      <condition>aucune opération sélectionnée</condition>
+    </transition>
+  </transitions>
+</fsm>

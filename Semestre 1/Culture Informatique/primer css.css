@@ -1,0 +1,12 @@
+body
+{
+/*Couleur de fond : */
+background-color: black;
+p
+{
+/*Couleur du texte : */
+text-color: white;
+/*Taille du texte en px : */
+font-size: 30px;
+}
+}

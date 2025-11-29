@@ -1,0 +1,198 @@
+---
+output:
+  word_document: default
+  html_document: default
+---
+
+title: "Tp_1_ Statistique"
+author: "Audéoud_Axel"
+date: "2024-03-19"
+output: word_document
+---
+```{r}
+library(ggplot2)
+library(tidyverse)
+n2000  <- read.csv("n2000.csv",sep = ";", encoding = "latin1")
+plot(unlist(n2000[5]),unlist(n2000[6]))
+```
+
+Exercice 1:
+Pour avoir  un  tableau clair et sans erreurs lors  du changement  de format nottament au niveau des caractères spéciaux.
+```{r}
+ggplot(data= n2000)+
+  aes(x = long,
+      y = lat,
+      color = biogeo) + 
+  geom_point()
+```
+Exercice 2:
+Les individus sont ceux qui recensent les site classés Natura 2000 en France Métropolitaine , les variables sont: surf,long,lat,alt,nbcom et biogeo. Les types de variables sont: quantitatives(surf,long,lat,alt,nbcom ) et qualitatives(biogeo)
+
+```{r}
+skewness  <- function(x) {
+  n <- length(x)
+  mean_x <- mean(x)
+  sd_x <- sd(x)
+  skew <- sum((x - mean_x)^3) / (n * sd_x^3)
+  return(skew)
+}
+
+kurtosis <- function(x) {
+  n <- length(x)
+  mean_x <- mean(x)
+  sd_x <- sd(x)
+  kurt <- sum((x - mean_x)^4) / (n * sd_x^4) - 3
+  return(kurt)
+}
+
+
+n2000_apply <- sapply(n2000,is.numeric)
+n2000_summary <- n2000[n2000_apply]
+n2000_summary <- n2000 |>
+  select(surf,long,lat,alt,nbcom,activplus,activmoins)
+
+n2000_summary <- n2000_summary[-1]
+
+summary_results <- lapply(n2000_summary, function(x) {c(summary(x),skewness = skewness(x),kurtosis = kurtosis(x), sd=sd(x))})
+
+boxplot(x=unlist(summary_results[5]))
+
+lapply(summary_results, function(x) {c(hist(x=x,breaks=4),boxplot(x=x))})
+```
+Exercice 3:
+La  répartition de  la  surface est très centrée sur la  moyenne.
+
+```{r}
+unlisted_n2000 <- unlist(n2000);
+table_n2000 <- table(unlisted_n2000)
+
+effectif <-c(table_n2000["Alpine"],table_n2000["Atlantique"],table_n2000["Continentale"],table_n2000["Méditerranéenne"])
+
+total_pc <- sum(effectif)/100
+
+effreq <- df <- data.frame(
+  effectifs = effectif,
+  fréquences = c(table_n2000["Alpine"]/total_pc, table_n2000["Atlantique"]/total_pc, table_n2000["Continentale"]/total_pc,table_n2000["Méditerranéenne"]/total_pc)
+)
+
+s_alpine <-0
+s_atlantique<-0
+s_continental <- 0
+s_medi<-0
+longueur <- lengths(n2000[1])
+for (i in 1:longueur) {
+  if (n2000[i,9] == "Alpine"){
+    s_alpine <- s_alpine+ n2000[i,4]
+  }
+  else if (n2000[i,9] == "Atlantique"){
+    s_atlantique <- s_atlantique+ n2000[i,4]
+  }
+  else if (n2000[i,9] == "Continentale") {
+    s_continental <- s_continental + n2000[i,4]
+  }
+  else if (n2000[i,9] == "Méditerranéenne") {
+    s_medi <- s_medi + n2000[i,4]
+  }
+}
+s_total_p<-(s_alpine+s_atlantique+s_continental+s_medi)/100
+
+tsurface <- df <- data.frame(
+  surface = c(s_alpine,s_atlantique,s_continental,s_medi),
+  pourcentage = c(s_alpine/s_total_p, s_atlantique/s_total_p, s_continental/s_total_p,s_medi/s_total_p)
+)
+rownames(tsurface) <- c("Alpine", "Atlantique", "Continentale", "Méditerranéenne")
+
+noms_barres <- c("Alpine", "Atlantique", "Continentale", "Méditerranéenne")
+
+
+barplot(unlist(effreq[1]), horiz = TRUE, 
+        names.arg = noms_barres, 
+        main = "Zones N2000 selon les catégories géobiologiques",
+        las = 1)
+
+barplot(unlist(tsurface[1]), 
+        names.arg = noms_barres, 
+        main = "Zones N2000 selon les catégories géobiologiques",
+        las = 1)
+
+effreq_tibble <- as_tibble(effreq)
+effreq_tibble <- effreq_tibble |>
+  add_column( noms_barres, .before = 1)
+
+tsurface_tibble <- as_tibble(tsurface)
+tsurface_tibble <- tsurface_tibble |>
+  add_column( noms_barres, .before = 1)
+
+ggplot(data = effreq) +
+ aes(x = noms_barres,
+     y=effectif) +
+ geom_col() 
+
+ggplot(data = tsurface_tibble) +
+ aes(x = noms_barres,
+     y=surface) +
+ geom_col() 
+```
+Exercice 4:
+On peut voir sur les différents diagrammes en barres que la fréquence du climat Atlantique est majoritaire suivi de la fréquence du climat Continental. Cependant lorsque l'on calcule la surface on remarque que le climat Atlantique est tres fortement majoritaire.
+
+```{r}
+#pour rappel n_2000_summary est équivalent à toutes les données quantitatives de n2000 qui nous interressent,
+cor(x=n2000_summary)
+pairs(x=n2000_summary)
+
+library(GGally)
+ggpairs(n2000_summary)
+
+for (i in 1:(ncol(n2000_summary) - 1)) {
+  for (j in (i + 1):ncol(n2000_summary)) {
+    cor.test(n2000_summary[,i], n2000_summary[,j])# on peut le print
+  }
+}
+
+```
+Exercice 5:
+Les variables les plus liées sont activplus et activmoins qui ont un coefficient de corrélation de 0.96~.
+
+```{r}
+lm(formula = n2$activmoins ~n2$activplus)
+plot(x = n2$activmoins, y = n2$activplus,abline(lm(formula = n2$activmoins ~n2$activplus)))
+```
+Exercice 6:
+Lorsque les points sont regroupés la ligne est en accord avec les points mais les extrèmes eux s'écartent de celle_ci.
+
+```{r}
+intervalles <- c(1, 3, 6, 11, 21,Inf)
+n2$classes <- cut(n2$nbcom, breaks = intervalles, labels = c("1 ou 2 communes", "3 à 5 communes", "6 à 10 communes", "11 à 20 communes","21 communes ou plus"))
+t_con <- table(n2$classes,n2000$biogeo)
+barplot(t_con)
+
+n <- c(mean(n2$surf))
+c(mean(n2$surf,group = n2$biogeo))
+
+var(x = n2$surf,y = n2$nbcom)
+
+######################################
+# Définition de la fonction varp pour calculer la variance de population
+varp <- function(x) {
+  n <- length(x)
+  mean_x <- mean(x)
+  sum_squares <- sum((x - mean_x)^2)
+  variance <- sum_squares / n
+  return(variance)
+}
+
+# Exemple de données (remplacez avec vos propres données)
+data <- data.frame(surf = c(10, 20, 15, 25, 30),
+                   libgeo = c("A", "A", "B", "B", "C"))
+
+# Calcul des moyennes et des variances de surf selon les niveaux de libgeo
+means <- tapply(data$surf, data$libgeo, mean)
+variances <- tapply(data$surf, data$libgeo, varp)
+
+# Affichage des résultats
+result <- data.frame(libgeo = names(means), moyenne_surf = means, variance_surf = variances)
+print(result)
+
+
+```

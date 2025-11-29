@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<circuit>
+  <version>2</version>
+  <attributes/>
+  <visualElements>
+    <visualElement>
+      <elementName>In</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Description</string>
+          <string>Entrrée sur 8 bits en complément à 2.</string>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>I</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>8</int>
+        </entry>
+      </elementAttributes>
+      <pos x="-260" y="-40"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Out</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Description</string>
+          <string>Codage 7 segment des unités</string>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>U_7seg</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>7</int>
+        </entry>
+      </elementAttributes>
+      <pos x="140" y="-40"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Out</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Description</string>
+          <string>Codage 7 segment des dizaines</string>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>D_7seg</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>7</int>
+        </entry>
+      </elementAttributes>
+      <pos x="140" y="80"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Out</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Description</string>
+          <string>Codage 7 segment des centaines</string>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>C_7seg</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>7</int>
+        </entry>
+      </elementAttributes>
+      <pos x="140" y="200"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Out</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Description</string>
+          <string>Codage 7 segment du signe</string>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>S_7seg</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>7</int>
+        </entry>
+      </elementAttributes>
+      <pos x="140" y="320"/>
+    </visualElement>
+    <visualElement>
+      <elementName>tp2_conv_bin_2_bcd_8bits.dig</elementName>
+      <elementAttributes/>
+      <pos x="-220" y="-40"/>
+    </visualElement>
+    <visualElement>
+      <elementName>tp2_conv_bcd_2_7seg_4bits.dig</elementName>
+      <elementAttributes/>
+      <pos x="-60" y="-40"/>
+    </visualElement>
+    <visualElement>
+      <elementName>tp2_conv_bcd_2_7seg_4bits.dig</elementName>
+      <elementAttributes/>
+      <pos x="-20" y="80"/>
+    </visualElement>
+    <visualElement>
+      <elementName>tp2_conv_bcd_2_7seg_4bits.dig</elementName>
+      <elementAttributes/>
+      <pos x="20" y="200"/>
+    </visualElement>
+    <visualElement>
+      <elementName>tp2_conv_bcd_2_7seg_4bits.dig</elementName>
+      <elementAttributes/>
+      <pos x="40" y="320"/>
+    </visualElement>
+  </visualElements>
+  <wires>
+    <wire>
+      <p1 x="-80" y="80"/>
+      <p2 x="-20" y="80"/>
+    </wire>
+    <wire>
+      <p1 x="40" y="80"/>
+      <p2 x="140" y="80"/>
+    </wire>
+    <wire>
+      <p1 x="-160" y="0"/>
+      <p2 x="-100" y="0"/>
+    </wire>
+    <wire>
+      <p1 x="-160" y="320"/>
+      <p2 x="40" y="320"/>
+    </wire>
+    <wire>
+      <p1 x="100" y="320"/>
+      <p2 x="140" y="320"/>
+    </wire>
+    <wire>
+      <p1 x="-160" y="-20"/>
+      <p2 x="-80" y="-20"/>
+    </wire>
+    <wire>
+      <p1 x="-260" y="-40"/>
+      <p2 x="-220" y="-40"/>
+    </wire>
+    <wire>
+      <p1 x="-160" y="-40"/>
+      <p2 x="-60" y="-40"/>
+    </wire>
+    <wire>
+      <p1 x="0" y="-40"/>
+      <p2 x="140" y="-40"/>
+    </wire>
+    <wire>
+      <p1 x="80" y="200"/>
+      <p2 x="140" y="200"/>
+    </wire>
+    <wire>
+      <p1 x="-100" y="200"/>
+      <p2 x="20" y="200"/>
+    </wire>
+    <wire>
+      <p1 x="-100" y="0"/>
+      <p2 x="-100" y="200"/>
+    </wire>
+    <wire>
+      <p1 x="-80" y="-20"/>
+      <p2 x="-80" y="80"/>
+    </wire>
+    <wire>
+      <p1 x="-160" y="20"/>
+      <p2 x="-160" y="320"/>
+    </wire>
+  </wires>
+  <measurementOrdering/>
+</circuit>

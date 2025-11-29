@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<circuit>
+  <version>2</version>
+  <attributes/>
+  <visualElements>
+    <visualElement>
+      <elementName>In</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>X_4b</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>4</int>
+        </entry>
+      </elementAttributes>
+      <pos x="1040" y="1220"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Out</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>Y_4b</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>4</int>
+        </entry>
+      </elementAttributes>
+      <pos x="1980" y="1280"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Out</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>Carry_out</string>
+        </entry>
+      </elementAttributes>
+      <pos x="1980" y="1340"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Splitter</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Input Splitting</string>
+          <string>4</string>
+        </entry>
+        <entry>
+          <string>Output Splitting</string>
+          <string>1,1,1,1</string>
+        </entry>
+      </elementAttributes>
+      <pos x="1080" y="1220"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Const</elementName>
+      <elementAttributes/>
+      <pos x="1100" y="1180"/>
+    </visualElement>
+    <visualElement>
+      <elementName>half-adder_1bit.dig</elementName>
+      <elementAttributes/>
+      <pos x="1160" y="1180"/>
+    </visualElement>
+    <visualElement>
+      <elementName>half-adder_1bit.dig</elementName>
+      <elementAttributes/>
+      <pos x="1280" y="1240"/>
+    </visualElement>
+    <visualElement>
+      <elementName>half-adder_1bit.dig</elementName>
+      <elementAttributes/>
+      <pos x="1400" y="1320"/>
+    </visualElement>
+    <visualElement>
+      <elementName>half-adder_1bit.dig</elementName>
+      <elementAttributes/>
+      <pos x="1560" y="1400"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Splitter</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Input Splitting</string>
+          <string>1,1,1,1</string>
+        </entry>
+        <entry>
+          <string>Output Splitting</string>
+          <string>4</string>
+        </entry>
+      </elementAttributes>
+      <pos x="1740" y="1240"/>
+    </visualElement>
+  </visualElements>
+  <wires>
+    <wire>
+      <p1 x="1100" y="1200"/>
+      <p2 x="1160" y="1200"/>
+    </wire>
+    <wire>
+      <p1 x="1220" y="1200"/>
+      <p2 x="1240" y="1200"/>
+    </wire>
+    <wire>
+      <p1 x="1100" y="1280"/>
+      <p2 x="1200" y="1280"/>
+    </wire>
+    <wire>
+      <p1 x="1700" y="1280"/>
+      <p2 x="1740" y="1280"/>
+    </wire>
+    <wire>
+      <p1 x="1960" y="1280"/>
+      <p2 x="1980" y="1280"/>
+    </wire>
+    <wire>
+      <p1 x="1040" y="1220"/>
+      <p2 x="1080" y="1220"/>
+    </wire>
+    <wire>
+      <p1 x="1660" y="1300"/>
+      <p2 x="1740" y="1300"/>
+    </wire>
+    <wire>
+      <p1 x="1100" y="1240"/>
+      <p2 x="1280" y="1240"/>
+    </wire>
+    <wire>
+      <p1 x="1340" y="1240"/>
+      <p2 x="1720" y="1240"/>
+    </wire>
+    <wire>
+      <p1 x="1760" y="1240"/>
+      <p2 x="1960" y="1240"/>
+    </wire>
+    <wire>
+      <p1 x="1220" y="1320"/>
+      <p2 x="1400" y="1320"/>
+    </wire>
+    <wire>
+      <p1 x="1460" y="1320"/>
+      <p2 x="1500" y="1320"/>
+    </wire>
+    <wire>
+      <p1 x="1200" y="1400"/>
+      <p2 x="1560" y="1400"/>
+    </wire>
+    <wire>
+      <p1 x="1620" y="1400"/>
+      <p2 x="1660" y="1400"/>
+    </wire>
+    <wire>
+      <p1 x="1100" y="1260"/>
+      <p2 x="1220" y="1260"/>
+    </wire>
+    <wire>
+      <p1 x="1240" y="1260"/>
+      <p2 x="1280" y="1260"/>
+    </wire>
+    <wire>
+      <p1 x="1340" y="1260"/>
+      <p2 x="1380" y="1260"/>
+    </wire>
+    <wire>
+      <p1 x="1500" y="1260"/>
+      <p2 x="1700" y="1260"/>
+    </wire>
+    <wire>
+      <p1 x="1720" y="1260"/>
+      <p2 x="1740" y="1260"/>
+    </wire>
+    <wire>
+      <p1 x="1100" y="1180"/>
+      <p2 x="1160" y="1180"/>
+    </wire>
+    <wire>
+      <p1 x="1220" y="1180"/>
+      <p2 x="1740" y="1180"/>
+    </wire>
+    <wire>
+      <p1 x="1380" y="1340"/>
+      <p2 x="1400" y="1340"/>
+    </wire>
+    <wire>
+      <p1 x="1460" y="1340"/>
+      <p2 x="1480" y="1340"/>
+    </wire>
+    <wire>
+      <p1 x="1960" y="1340"/>
+      <p2 x="1980" y="1340"/>
+    </wire>
+    <wire>
+      <p1 x="1480" y="1420"/>
+      <p2 x="1560" y="1420"/>
+    </wire>
+    <wire>
+      <p1 x="1620" y="1420"/>
+      <p2 x="1960" y="1420"/>
+    </wire>
+    <wire>
+      <p1 x="1200" y="1280"/>
+      <p2 x="1200" y="1400"/>
+    </wire>
+    <wire>
+      <p1 x="1220" y="1260"/>
+      <p2 x="1220" y="1320"/>
+    </wire>
+    <wire>
+      <p1 x="1380" y="1260"/>
+      <p2 x="1380" y="1340"/>
+    </wire>
+    <wire>
+      <p1 x="1700" y="1260"/>
+      <p2 x="1700" y="1280"/>
+    </wire>
+    <wire>
+      <p1 x="1240" y="1200"/>
+      <p2 x="1240" y="1260"/>
+    </wire>
+    <wire>
+      <p1 x="1480" y="1340"/>
+      <p2 x="1480" y="1420"/>
+    </wire>
+    <wire>
+      <p1 x="1960" y="1340"/>
+      <p2 x="1960" y="1420"/>
+    </wire>
+    <wire>
+      <p1 x="1960" y="1240"/>
+      <p2 x="1960" y="1280"/>
+    </wire>
+    <wire>
+      <p1 x="1720" y="1240"/>
+      <p2 x="1720" y="1260"/>
+    </wire>
+    <wire>
+      <p1 x="1100" y="1200"/>
+      <p2 x="1100" y="1220"/>
+    </wire>
+    <wire>
+      <p1 x="1500" y="1260"/>
+      <p2 x="1500" y="1320"/>
+    </wire>
+    <wire>
+      <p1 x="1660" y="1300"/>
+      <p2 x="1660" y="1400"/>
+    </wire>
+    <wire>
+      <p1 x="1740" y="1180"/>
+      <p2 x="1740" y="1240"/>
+    </wire>
+  </wires>
+  <measurementOrdering/>
+</circuit>

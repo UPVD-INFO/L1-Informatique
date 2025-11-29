@@ -1,0 +1,48 @@
+<HTML><HEAD>
+<link rel="stylesheet" href="Nuevo_documento_de_texto.css">
+<TITLE> Curiculum Vitae </TITLE>
+</HEAD><BODY>
+<H1 style="color:red;"> Informations Personnels </H1>
+<P><IMG src="./test.jpg"></P>
+</BR>
+<UL>
+ <LI>Alan</LI>
+ <LI>Turing</LI>
+ <LI>Londres, Maida Vale</LI>
+ <LI>Inconnu</LI>
+ <LI>06 84 24 85 92</LI>
+</UL>
+<H2> Diplomes Obtenu</H2>
+<LI> Universite de Cambridge premier cycle en mathématiques </LI>
+<LI> Princeton University doctorat en logique mathématique </LI>
+<TABLE BORDER="1"
+<TR> <TD> Université de Manchester (1948-1954) </TD> <TD> Théorie de la calculabilité </TD> <TD> Intelligence Artificielle (IA) </TD> </TR>
+<TR> <TD>
+Après la guerre, Turing a travaillé à l'Université de Manchester, 
+où il a été impliqué dans le développement du Manchester Mark 1,
+l'un des premiers ordinateurs électroniques programmables.
+</TD>
+<TD>
+Turing a développé la machine de Turing, un concept
+fondamental dans la théorie de la calculabilité, 
+qui a posé les bases théoriques de ce qui est aujourd'hui connu 
+sous le nom d'informatique.
+</TD>
+<TD>
+Bien que le terme "intelligence artificielle" n'ait été formulé que plus tard, 
+Turing a posé des questions fondamentales sur la possibilité 
+de créer une machine intelligente  
+</TD>
+</TABLE>
+
+<H3> Fais marquant </H3>
+
+<P>
+Théorie de la calculabilité (1936) 
+Décryptage d'Enigma (1939-1945)
+Machine Bombe (1940)
+Travail à l'Université de Manchester (1948-1954) 
+Test de Turing (1950)
+Persécution pour homosexualité (1952)
+Décès (1954)
+<P>

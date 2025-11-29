@@ -1,0 +1,32 @@
+---
+title: "stat1.Rmd"
+author: "Souilah Walid"
+date: "2024-03-19"
+output: word_document
+---
+```{r}
+# activite 5
+n2000 <- read.csv("n2000.csv" , sep=";" , encoding="latin1")
+plot(unlist(n2000[5]),unlist(n2000[6]))
+```
+Exercice 1: On utilise ses commandes pour separer chaque partie, pour que cela soit lisible et surtout pour organiser nos donnees en les ilustrant pour pouvoir les lire et utiliser.
+
+```{r}
+#activite 6
+library(ggplot2)
+ggplot(data = n2000)+
+  aes(
+    x= long,
+    y= lat,
+    color= factor(biogeo))+
+  geom_point()
+
+```
+Exercice 2: Les individus sont ceux qui recensent les site classés Natura 2000 en France Métropolitaine , les variables sont: surf,long,lat,,alt,nbcom et biogeo. Les types de variables sont: quantitatives(surf,long,lat,,alt,nbcom ) et qualitatives(biogeo)
+
+```{r}
+#activite 7
+summary(n2000)
+tapply(n2000,summary(n2000),mean,sd,min,max,median,quantile,skewness,kurtosis) 
+```
+

@@ -1,0 +1,26 @@
+exercice 1
+
+if valeur > 100:
+  if valeur > 200:
+    print("...")
+  print("...B")
+  print("...")
+  
+  valeur= 20
+  
+  resultat: C
+ 
+  valeur= 100
+  
+  resultat: C
+  
+  valeur= 150
+  
+  resultat: B,C
+  
+  valeur= 200
+  
+  resultat: B,C
+  
+  
+  le but c de savoir comment un programme marche et de pouvoir le lire et savoir le resultat avant meme son execution.

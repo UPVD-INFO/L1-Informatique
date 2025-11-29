@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<circuit>
+  <version>2</version>
+  <attributes/>
+  <visualElements>
+    <!-- Définition des entrées binaires -->
+    <visualElement>
+      <elementName>In</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>Input0</string>
+        </entry>
+      </elementAttributes>
+      <pos x="-200" y="20"/>
+    </visualElement>
+    <!-- Répétez pour les autres entrées binaires selon le besoin -->
+
+    <!-- Définition des sorties BCD -->
+    <visualElement>
+      <elementName>Out</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>BCD0</string>
+        </entry>
+      </elementAttributes>
+      <pos x="200" y="20"/>
+    </visualElement>
+    <!-- Répétez pour les autres sorties BCD selon le besoin -->
+
+    <!-- Définition de la LUT pour la conversion -->
+    <visualElement>
+      <elementName>LUT</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Bits</string>
+          <int>4</int> <!-- Adaptez ce nombre au nombre d'entrées de votre LUT -->
+        </entry>
+        <entry>
+          <string>Function</string>
+          <string>(votre fonction de conversion ici)</string>
+        </entry>
+      </elementAttributes>
+      <pos x="0" y="100"/>
+    </visualElement>
+  </visualElements>
+  <wires>
+    <!-- Connectez vos entrées, LUT et sorties ici -->
+  </wires>
+</circuit>
